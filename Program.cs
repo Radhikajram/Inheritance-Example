@@ -22,24 +22,24 @@ namespace Inheritance_Example
             {
                 // Print Horse Properties
 
-                Horse horse = new Horse("Horse", 50.5, 10);
+                Horse horse = new Horse("Horse", 50.5, 10, 120);
                 Console.WriteLine(horse.Stats());
 
                 // print Dog Properties
 
 
-                Dog dog = new Dog("Dog", 30.5, 3);
+                Dog dog = new Dog("Dog", 30.5, 3,"black");
                 Console.WriteLine(dog.Stats());
 
                 //Print Hedgehog Properties
 
 
-                Hedgehog hedgehog = new Hedgehog("Hedgehog", 10.5, 3);
+                Hedgehog hedgehog = new Hedgehog("Hedgehog", 10.5, 3,50);
                 Console.WriteLine(hedgehog.Stats());
 
                 // Print Bird properties.
 
-                Bird bird = new Bird("bird", 7.5, 1);
+                Bird bird = new Bird("bird", 7.5, 1,5);
                 Console.WriteLine(bird.Stats());
 
                 
@@ -49,15 +49,15 @@ namespace Inheritance_Example
             {
                 var  animal = new List<Animal>()
                 {
-                    new Horse("NAPOLEON", 50.5, 10),
-                    new  Dog("Apollo", 30.5, 3),
-                    new Hedgehog("Spiky", 10.5, 3),
-                    new Bird("Kiwi", 7.5, 1),
+                    new Horse("NAPOLEON", 50.5, 10, 120),
+                    new  Dog("Apollo", 30.5, 3,"black"),
+                    new Hedgehog("Spiky", 10.5, 3,50),
+                    new Bird("Kiwi", 7.5, 1,4),
 
                 };
 
-                Bird bird1 = new Bird("Joy", 6, 2);
-                Dog dog1 = new Dog("Jimmy", 13.5, 4);
+                Bird bird1 = new Bird("Joy", 6, 2,3);
+                Dog dog1 = new Dog("Jimmy", 13.5, 4,"brown");
 
                 // Add Animals to List
                 animal.Add(bird1);

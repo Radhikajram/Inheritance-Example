@@ -46,16 +46,17 @@ namespace Inheritance_Example
 
     class Horse : Animal
     {
-        public Horse(string name, double weight, int age) : base(name, weight, age)
+        public Horse(string name, double weight, int age, int height) : base(name, weight, age)
         {
-            this.name = name;
-            this.weight = weight;
-            this.age = age;
+           
+            Height = height;
         }
+
+        public int Height { get; }
 
         public override string Stats()
         {
-            return base.Stats();
+            return base.Stats() + $"Hight {Height}!";
         }
         public void VisionPower()
         {
@@ -67,14 +68,14 @@ namespace Inheritance_Example
 
     class Dog : Animal
     {
-        public Dog(string name, double weight, int age) : base(name, weight, age)
+        public Dog(string name, double weight, int age,string color) : base(name, weight, age)
         {
-            
+            Color = color;
         }
-
+        public string Color { get; }
         public override string Stats()
         {
-            return base.Stats();
+            return base.Stats() + $"Color {Color}!";
         }
         public void Smart()
         {
@@ -89,14 +90,16 @@ namespace Inheritance_Example
     }
     class Hedgehog : Animal
     {
-        public Hedgehog(string name, double weight, int age) : base(name, weight, age)
+        public Hedgehog(string name, double weight, int age,int noofSpike) : base(name, weight, age)
         {
-
+            NoofSpike = noofSpike;
      
         }
+
+        public int NoofSpike{ get; }
         public override string Stats()
         {
-            return base.Stats();
+            return base.Stats() + $"NoofSpike { NoofSpike}!"; ;
         }
         public void Quills()
         {
@@ -105,46 +108,64 @@ namespace Inheritance_Example
     }
     class Bird : Animal
     {
-        public Bird(string name, double weight, int age) : base(name, weight, age)
+        public Bird(string name, double weight, int age, int wingspan) : base(name, weight, age)
         {
+            WingSpan = wingspan;
+        }
 
-        }
-        public override string Stats()
+       public int WingSpan { get; }
+       public override string Stats()
         {
-            return base.Stats();
+            return base.Stats() + $"  WingSpan {WingSpan}!"; 
         }
-        public void Fly()
-        {
-            Console.WriteLine("Birds can fly");
+        public virtual string Fly()
+        { 
+            return "Birds can fly";
         }
 
     class Pelican : Bird
         {
-            public Pelican(string name, double weight, int age) : base(name, weight, age) { }
-
-            public void  Beaks()
+            public Pelican(string name, double weight, int age,int wingspan,String beak) : base(name, weight, age,wingspan) 
             {
-                Console.WriteLine("Has Long Beak");
+                Beak = beak;
             }
+
+            public string Beak { get; }
+
+            public override string Fly()
+            {
+                return base.Fly() + $" {Beak}";
+            }
+            
         }
 
         class Flemingo : Bird
         {
-            public Flemingo(string name, double weight, int age) : base(name, weight, age) { }
-
-            public void  StandingPosition()
+            public Flemingo(string name, double weight, int age,int wingspan,string Standing) : base(name, weight, age,wingspan)
             {
-                Console.WriteLine("Can stand in single leg for long time");
+                StandingPosition = Standing;
             }
 
+            public string StandingPosition { get; }
+
+            public override string Fly()
+            {
+                return base.Fly() + $" {StandingPosition}";
+            }
+            
         }
         class Swan : Bird
         {
-            public Swan(string name, double weight, int age) : base(name, weight, age) { }
-            
-            public void SeperateSmartness()
+            public Swan(string name, double weight, int age,int wingspan,string capabality) : base(name, weight, age,wingspan) 
             {
-                Console.WriteLine("Has capcity to seperate milk and water");
+                Capability = capabality;
+            }
+
+            public string Capability { get; }
+
+            public override string Fly()
+            {
+                return base.Fly() + $" {Capability}";
             }
 
         }
